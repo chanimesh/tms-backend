@@ -1,13 +1,4 @@
-import pytest
-from tms_backend.tms_backend import tms_backend
 from .settings import mongo
-
-
-@pytest.fixture
-def client():
-    tms_backend.config['TESTING'] = True
-    with tms_backend.test_client() as client:
-        yield client
 
 
 def test_home_api(client):
